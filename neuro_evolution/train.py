@@ -55,9 +55,9 @@ def train_and_score(network, x_train, y_train, x_test, y_test):
     model.fit(x_train, y_train,
               batch_size=network.get('batch_size', 128),
               epochs=10000,  # using early stopping, so no real limit
-              verbose=network.get('verbose', 0),
-              validation_data=(x_test, y_test),
-              callbacks=[early_stopper])
+              verbose=network.get('verbose', 0))
+              #validation_data=(x_test, y_test),
+              #callbacks=[early_stopper])
 
     #score = model.evaluate(x_test, y_test, verbose=0)
     
