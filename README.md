@@ -4,7 +4,7 @@
 
 This repository is wrapper and slightly modified implementation for the code provided by [Matt Harvey]('https://github.com/harvitronix') repository: <https://github.com/harvitronix/neural-network-genetic-algorithm>
 
-installation: `pip install git+https://github.com/subpath/neuro-evolution.git`
+installation: `pip install git+https://github.com/EvanBagis/neuro-evolution-regression.git`
 
 Example of usage:
 
@@ -20,9 +20,8 @@ params = { "epochs": [10, 20, 35],
            "n_neurons": [20, 40, 60],
            "dropout": [0.1, 0.2, 0.5],
            "optimizers": ["nadam", "adam"],
-           "activations": ["relu", "sigmoid"], "last_layer_activations": ["sigmoid"],
-           "losses": ["binary_crossentropy"],
-           "metrics": ["accuracy"] }
+           "activations": ["relu", "sigmoid"], "last_layer_activations": ["linear"],
+           "losses": ["mse"] }
 ```
 
 ```python
