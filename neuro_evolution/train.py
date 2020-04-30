@@ -69,4 +69,4 @@ def train_and_score(network, x_train, y_train, x_test, y_test):
 
     print(' R2 = ', r2_score(true, pred))
 
-    return r2_score(true, pred)
+    return r2_score(true, pred), model
