@@ -20,7 +20,7 @@ params = { "epochs": [10, 20, 35],
            "n_neurons": [20, 40, 60],
            "dropout": [0.1, 0.2, 0.5],
            "optimizers": ["nadam", "adam"],
-           "activations": ["relu", "sigmoid"], "last_layer_activations": ["linear"],
+           "activations": ["relu", "softplus"], "last_layer_activations": ["linear"],
            "losses": ["mse"] }
 ```
 
