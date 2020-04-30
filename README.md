@@ -14,7 +14,7 @@ Credits to the repos below.
 []('https://github.com/subpath') repository: <https://github.com/subpath/neuro-evolution>
 
 
-installation: `pip install git+https://github.com/EvanBagis/neuro-evolution-regression.git`
+installation: `pip install git+https://github.com/EvanBagis/MLP_regression_evolution.git`
 
 Example of usage:
 
