@@ -3,7 +3,9 @@
 # neuro-evolution-regression
 
 This is a repository for MLP hyperparameter tuning via a genetic algorithm. The optimization process tries to maximize the coefficient of determination between obeservations and predictions.
-[Neuro-evelution]('https://en.wikipedia.org/wiki/Neuroevolution') for Neural Network hyper parameter tuning
+
+For more information on the usage of genetic algorithms for hyperparameter tuning:
+[Neuro-evolution]('https://en.wikipedia.org/wiki/Neuroevolution') for Neural Network hyper parameter tuning
 
 Credits to the repos below.
 
