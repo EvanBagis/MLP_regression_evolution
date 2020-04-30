@@ -1,8 +1,16 @@
+## don't use neuro-evolution-regression with neuro-evolution for now
+
 # neuro-evolution
 
+This is a repository for MLP hyperparameter tuning via a genetic algorithm. The optimization process tries to maximize the coefficient of determination between obeservations and predictions.
 [Neuro-evelution]('https://en.wikipedia.org/wiki/Neuroevolution') for Neural Network hyper parameter tuning
 
-This repository is wrapper and slightly modified implementation for the code provided by [Matt Harvey]('https://github.com/harvitronix') repository: <https://github.com/harvitronix/neural-network-genetic-algorithm>
+Credits to the repos below.
+
+[]('https://github.com/harvitronix') repository: <https://github.com/harvitronix/neural-network-genetic-algorithm>
+
+[]('https://github.com/subpath') repository: <https://github.com/subpath/neuro-evolution>
+
 
 installation: `pip install git+https://github.com/EvanBagis/neuro-evolution-regression.git`
 
@@ -45,8 +53,8 @@ search.evolve(x_train, y_train, x_test, y_test)
 ```
 
 ```bash
-"best accuracy: 0.79,
-best params: {'epochs': 35, 'batch_size': 40, 'n_layers': 2, 'n_neurons': 20, 'dropout': 0.1, 'optimizers': 'nadam', 'activations': 'relu', 'last_layer_activations': 'sigmoid', 'losses': 'binary_crossentropy', 'metrics': 'accuracy'}"
+"best coefficient of determination: 0.79,
+best params: {'epochs': 35, 'batch_size': 40, 'n_layers': 2, 'n_neurons': 20, 'dropout': 0.1, 'optimizers': 'nadam', 'activations': 'relu'}"
 ```
 
 ## or you can call it with
