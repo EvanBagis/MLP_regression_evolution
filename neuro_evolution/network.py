@@ -27,3 +27,4 @@ class Network:
 
     def train(self, x_train, y_train, x_test, y_test):
         self.accuracy, model = train_and_score(self.network, x_train, y_train, x_test, y_test)
+        return model
