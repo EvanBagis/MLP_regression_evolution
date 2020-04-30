@@ -1,9 +1,12 @@
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.callbacks import EarlyStopping
+from sklearn.metrics import mean_squared_error, mean_absolute_error, explained_variance_score, r2_score
+from matplotlib import pyplot as plt
+import numpy as np
+import pandas as pd
 
 early_stopper = EarlyStopping(patience=5)
-
 
 def compile_model(network, input_shape):
     """
@@ -15,7 +18,7 @@ def compile_model(network, input_shape):
 
     nb_layers = network.get('n_layers', 2)
     nb_neurons = network.get('n_neurons', 10)
-    activation = network.get('activations', 'sigmoid')
+    activation = network.get('activations', 'linear')
     optimizer = network.get('optimizers', 'adam')
 
     model = Sequential()
@@ -28,11 +31,10 @@ def compile_model(network, input_shape):
 
     model.add(Dense(
         network.get('last_layer_neurons', 1),
-        activation=network.get('last_layer_activations', 'sigmoid'),
+        activation=network.get('last_layer_activations', 'linear'),
     ))
 
-    model.compile(loss=network.get('losses', 'binary_crossentropy'), optimizer=optimizer,
-                  metrics=[network.get('mertics', 'accuracy')])
+    model.compile(loss=network.get('losses', 'mse'), optimizer=optimizer)
 
     return model
 
@@ -54,9 +56,16 @@ def train_and_score(network, x_train, y_train, x_test, y_test):
               batch_size=network.get('batch_size', 128),
               epochs=10000,  # using early stopping, so no real limit
               verbose=network.get('verbose', 0),
-              validation_data=(x_test, y_test),
               callbacks=[early_stopper])
 
-    score = model.evaluate(x_test, y_test, verbose=0)
+    #score = model.evaluate(x_test, y_test, verbose=0)
+    
+    y_pred = model.predict(np.array(x_test))
+    y_pred = np.concatenate(y_pred)
 
-    return score[1]  # 1 is accuracy. 0 is loss.
+    true = y_test
+    pred =  y_pred
+
+    print('R2 = ', r2_score(true, pred))
+
+    return r2_score(true, pred)
