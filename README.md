@@ -19,7 +19,7 @@ Example of usage:
 
 ```python
 
-from MLP_regression_evolution import reg_evolution
+from MLP_regression_evolution import mlp_evolution
 
 params = { "epochs": [10, 20, 35],
            "batch_size": [10, 20, 40],
@@ -34,7 +34,7 @@ params = { "epochs": [10, 20, 35],
 ```python
 # x_train, y_train, x_test, y_test - prepared data
 
-search = reg_evolution.MLPRegressionEvolution(generations = 10, population = 10, params=params)
+search = mlp_evolution.MLPRegressionEvolution(generations = 10, population = 10, params=params)
 
 search.evolve(x_train, y_train, x_test, y_test)
 ```
