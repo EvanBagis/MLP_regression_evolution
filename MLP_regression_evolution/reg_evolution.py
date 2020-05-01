@@ -8,7 +8,7 @@ from logger import logger
 from optimizer import Optimizer
 
 
-class gb_rf_evolution:
+class MLPRegressionEvolution:
     def __init__(self, generations, population, params):
         """
         :param generations int: number of generation
