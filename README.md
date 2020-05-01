@@ -1,9 +1,6 @@
 # MLP_regression_evolution
 This is a repository for MLP hyperparameter tuning via a genetic algorithm. The optimization process tries to maximize the coefficient of determination between obeservations and predictions.
 
-For more information on the usage of genetic algorithms for hyperparameter tuning:
-[Neuro-evolution]('https://en.wikipedia.org/wiki/Neuroevolution') for Neural Network hyper parameter tuning
-
 Credits to the repos below.
 
 []('https://github.com/harvitronix') repository: <https://github.com/harvitronix/neural-network-genetic-algorithm>
@@ -27,7 +24,8 @@ params = { "epochs": [10, 20, 35],
            "n_neurons": [20, 40, 60],
            "dropout": [0.1, 0.2, 0.5],
            "optimizers": ["nadam", "adam"],
-           "activations": ["relu", "softplus"], "last_layer_activations": ["linear"],
+           "activations": ["relu", "softplus"], 
+           "last_layer_activations": ["linear"],
            "losses": ["mse"] }
 ```
 
